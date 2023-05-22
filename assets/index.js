@@ -1,0 +1,11 @@
+export { default as WelcomeBG } from "./images/Home1.png";
+export { default as GLoc } from "./images/GLocation.png";
+export { default as Profile } from "./images/DumProfile.png";
+export { default as Food } from "./images/FoodMenu.png";
+export { default as Cafe } from "./images/CafeMenu.png";
+export { default as Landmark } from "./images/LandmarkMenu.png";
+export { default as Museum } from "./images/MuseumMenu.png";
+export { default as Shopping } from "./images/ShopMenu.png";
+export { default as Map } from "./images/Map.png";
+export { default as Search } from "./images/GSearch.png";
+export { default as MuseumCard } from "./images/DumCard.png";
