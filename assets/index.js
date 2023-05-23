@@ -9,3 +9,4 @@ export { default as Shopping } from "./images/ShopMenu.png";
 export { default as Map } from "./images/Map.png";
 export { default as Search } from "./images/GSearch.png";
 export { default as MuseumCard } from "./images/DumCard.png";
+export { default as Walku } from "./images/InvertWalku.png";
