@@ -5,8 +5,9 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import MenuContainer from "../components/MenuContainer";
@@ -18,16 +19,18 @@ import {
   Map,
   Museum,
   MuseumCard,
-  Profile,
   Search,
   Shopping,
 } from "../assets";
 import ItemCardContainer from "../components/ItemCardContainer";
+import { AuthContext } from "../store/auth-context";
 
 const Home = () => {
   const navigation = useNavigation();
 
   const [type, setType] = useState("hotels");
+
+  const authCtx = useContext(AuthContext);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -44,10 +47,16 @@ const Home = () => {
         <View className="w-10/12">
           <Text className="text-xl ">Jakarta</Text>
         </View>
-
-        <View className="bg-secondary rounded-full items-center justify-center">
-          <Image source={Profile} className="w-12 h-12" />
-        </View>
+        <Pressable onPress={() => authCtx.logout()}>
+          <View className="bg-secondary rounded-full items-center justify-center">
+            <Image
+              source={{
+                uri: "https://firebasestorage.googleapis.com/v0/b/walku-387420.appspot.com/o/BlankProf.png?alt=media&token=e2bb5a80-de0c-41f6-96fd-c4f02e2fa3a1",
+              }}
+              className="w-12 h-12 rounded-full"
+            />
+          </View>
+        </Pressable>
       </View>
 
       <View className="flex-row justify-center items-center bg-white border border-black my-3 mx-8 rounded-full px-4 shadow-2xl">
