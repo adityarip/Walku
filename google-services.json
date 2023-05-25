@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701147929002",
+    "project_id": "walku-387420",
+    "storage_bucket": "walku-387420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701147929002:android:1ad4031d5bede3d2e6b3d3",
+        "android_client_info": {
+          "package_name": "com.example.walku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701147929002-biq0va9qn5tcef5mmf61tlc864kec2fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNUJQkmIEctqXr7X0JKsHd506JtNKB4U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701147929002-biq0va9qn5tcef5mmf61tlc864kec2fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
