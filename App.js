@@ -8,6 +8,7 @@ import SignupScreen from "./screens/SignupScreen";
 import AuthContextProvider, { AuthContext } from "./store/auth-context";
 import { useContext } from "react";
 import ProfileScreen from "./screens/ProfileScreen";
+import ExploreScreen from "./screens/ExploreScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,6 +28,7 @@ function AuthenticatedStack() {
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Landing" component={Landing} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Explore" component={ExploreScreen} />
     </Stack.Navigator>
   );
 }

@@ -24,6 +24,7 @@ import {
 } from "../assets";
 import ItemCardContainer from "../components/ItemCardContainer";
 import { AuthContext } from "../store/auth-context";
+import { LocContext } from "../store/loc-context";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -31,6 +32,7 @@ const Home = () => {
   const [type, setType] = useState("hotels");
 
   const authCtx = useContext(AuthContext);
+  const locCtx = useContext(LocContext);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -68,6 +70,11 @@ const Home = () => {
           onPress={(data, details = null) => {
             // 'details' is provided when fetchDetails = true
             console.log(details?.geometry?.viewport);
+            locCtx.setBl_lat(details?.geometry?.viewport?.southwest?.lat);
+            locCtx.setBl_lng(details?.geometry?.viewport?.southwest?.lng);
+            locCtx.setTr_lat(details?.geometry?.viewport?.northeast?.lat);
+            locCtx.setTr_lng(details?.geometry?.viewport?.northeast?.lng);
+            console.log(locCtx.bl_lat);
           }}
           query={{
             key: "AIzaSyAvDY6HvYKu25o6RKVeEQQnLHHUPyRSPwI",
@@ -93,8 +100,7 @@ const Home = () => {
             key={"food"}
             title="Food"
             imageSrc={Food}
-            type={type}
-            setType={setType}
+            setType="restaurants"
             bgColor={"bg-[#F9B50F]"}
           />
 
@@ -102,8 +108,7 @@ const Home = () => {
             key={"cafe"}
             title="Cafe"
             imageSrc={Cafe}
-            type={type}
-            setType={setType}
+            setType="restaurants"
             bgColor={"bg-[#741B1B]"}
           />
 
@@ -111,8 +116,7 @@ const Home = () => {
             key={"landmark"}
             title="Landmark"
             imageSrc={Landmark}
-            type={type}
-            setType={setType}
+            setType="restaurants"
             bgColor={"bg-[#7973ED]"}
           />
 
@@ -120,8 +124,7 @@ const Home = () => {
             key={"museum"}
             title="Museum"
             imageSrc={Museum}
-            type={type}
-            setType={setType}
+            setType="restaurants"
             bgColor={"bg-[#37F3A4]"}
           />
 
@@ -129,8 +132,7 @@ const Home = () => {
             key={"shopping"}
             title="Shopping"
             imageSrc={Shopping}
-            type={type}
-            setType={setType}
+            setType="restaurants"
             bgColor={"bg-[#FCBCB3]"}
           />
         </View>
