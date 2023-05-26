@@ -17,6 +17,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath('com.android.tools.build:gradle:7.4.1')
@@ -36,7 +37,14 @@ allprojects {
         }
 
         google()
-        mavenCentral()
+        mavenCentral {
+            // We don't want to fetch react-native from Maven Central as there are
+            // older versions over there.
+            content {
+                excludeGroup "com.facebook.react"
+            }
+        }
+        jcenter()
         maven { url 'https://www.jitpack.io' }
     }
 }
